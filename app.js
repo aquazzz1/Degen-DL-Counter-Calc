@@ -483,7 +483,7 @@ function getApiStatusText() {
 
 function getItemIconPath(itemName) {
   const slug = normalizeSlug(itemName);
-  return slug ? `DLicons/items/flat/${slug}.png` : "";
+  return slug ? `DLicons/Items/flat/${slug}.png` : "";
 }
 
 function cloneHeroCounters(heroCounters) {
