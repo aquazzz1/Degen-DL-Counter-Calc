@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadlock Counter Picker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <h1>Degenerate Deadlock Counter-buy Calculator</h1>
+      <p class="intro">
+        Find the highest-value counter items for the enemy lineup, with self-hero synergy informed by live win and pick-rate data.
+      </p>
+      <p class="controls-copy">
+        Left click adds enemies. Right click marks your hero. Your cheatsheet can be imported or exported any time.
+      </p>
+
+      <div class="legend">
+        <span class="legend-chip enemy">Enemy pick</span>
+        <span class="legend-chip self">Your hero</span>
+      </div>
+
+      <div class="toolbar">
+        <div id="selection-summary" class="selection-summary">0 / 6 enemy heroes selected.</div>
+        <div class="form-actions">
+          <button type="button" id="fill-demo" class="secondary-button">Load Demo Team</button>
+          <button type="button" id="import-sheet" class="secondary-button">Import Cheatsheet</button>
+          <button type="button" id="export-sheet" class="secondary-button">Export Cheatsheet</button>
+          <button type="button" id="clear-all" class="secondary-button">Clear</button>
+        </div>
+      </div>
+
+      <section class="hero-board-section">
+        <div class="hero-board" id="hero-board"></div>
+      </section>
+
+      <input type="file" id="import-sheet-file" accept="application/json" hidden>
+    </section>
+
+    <section class="results-panel">
+      <div class="results-header">
+        <div>
+          <div class="eyebrow">Recommendations</div>
+          <h2>Best item value into this lineup</h2>
+        </div>
+        <div class="results-summary-block">
+          <div id="team-summary" class="team-summary">Choose enemy heroes to begin.</div>
+          <div id="api-status" class="api-status"></div>
+        </div>
+      </div>
+
+      <div id="results-empty" class="empty-state">
+        Rankings will appear here once you select at least one enemy hero.
+      </div>
+
+      <ol id="results-list" class="results-list" hidden></ol>
+    </section>
+  </main>
+
+  <script src="counter-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
