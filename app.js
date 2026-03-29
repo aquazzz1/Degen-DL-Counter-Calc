@@ -482,8 +482,9 @@ function getApiStatusText() {
 }
 
 function getItemIconPath(itemName) {
-  const slug = normalizeSlug(itemName);
-  return slug ? `DLicons/Items/flat/${slug}.png` : "";
+  const normalizedName = normalizeApiItemName(itemName);
+  const fileName = String(normalizedName || itemName).replace(/[^A-Za-z0-9]+/g, "");
+  return fileName ? `DLicons/Items/flat/${fileName}.png` : "";
 }
 
 function cloneHeroCounters(heroCounters) {
